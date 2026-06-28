@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) {
 
         uint32_t sum = 0;
 
-        for (int i=1;i<argc;i++) {
+        for (int i=1; i<argc; i++) {
                 FILE *fp = fopen(argv[i], "rb");
                 if (fp == NULL) {
                         fprintf(stderr, "Error: cannot open file '%s'\n", argv[i]);
@@ -29,11 +29,10 @@ int main(int argc, char *argv[]) {
                 size_t n = fread(&raw, sizeof(raw), 1, fp);
                 fclose(fp);
 
-		if (n != 1) {
-			fprintf(stderr, "Error: cannot read 4 bytes from '%s'\n", argv[i]);
-			fclose(fp);
-			return 1;
-		}
+                if (n != 1) {
+                        fprintf(stderr, "Error: cannot read 4 bytes from '%s'\n", argv[i]);
+                        return 1;
+                }
 
                 uint32_t value = myntohl(raw);
                 sum = sum + value;
