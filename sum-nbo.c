@@ -31,7 +31,8 @@ int main(int argc, char *argv[]) {
 
                 if (n != 1) {
                         fprintf(stderr, "Error: cannot read 4 bytes from '%s'\n", argv[i]);
-                        return 1;
+                        fclose(fp);
+			return 1;
                 }
 
                 uint32_t value = myntohl(raw);
