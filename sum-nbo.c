@@ -29,11 +29,11 @@ int main(int argc, char *argv[]) {
                 size_t n = fread(&raw, sizeof(raw), 1, fp);
                 fclose(fp);
 
-                if (n != 1) {
-                        fprintf(stderr, "Error: cannot read 4 bytes from '%s'\n", argv[i]);
+		if (n != 1) {
+			fprintf(stderr, "Error: cannot read 4 bytes from '%s'\n", argv[i]);
 			fclose(fp);
 			return 1;
-                }
+		}
 
                 uint32_t value = myntohl(raw);
                 sum = sum + value;
