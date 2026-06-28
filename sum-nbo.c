@@ -36,7 +36,7 @@ int main(int argc, char *argv[]) {
                 }
 
                 uint32_t value = myntohl(raw);
-                sum += value;
+                sum = sum + value;
 
                 if (i > 1)
                         printf(" + ");
