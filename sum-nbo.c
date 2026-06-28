@@ -31,7 +31,7 @@ int main(int argc, char *argv[]) {
 
                 if (n != 1) {
                         fprintf(stderr, "Error: cannot read 4 bytes from '%s'\n", argv[i]);
-                        fclose(fp);
+			fclose(fp);
 			return 1;
                 }
 
